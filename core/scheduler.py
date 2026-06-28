@@ -96,9 +96,9 @@ class Scheduler:
 
             try:
 
-                emoji = random.choice(
-                    Config.REACTION_EMOJIS
-                )
+               emoji = self.reactions.choose(
+               message.content
+               )
 
                 await message.add_reaction(emoji)
 
