@@ -2,6 +2,7 @@ import asyncio
 import random
 import time
 
+from core.reactions import ReactionManager
 from config import Config
 
 
@@ -13,6 +14,22 @@ class Scheduler:
         self.ai = ai
         self.memory = memory
         self.personality = personality
+        class Scheduler:
+
+    def __init__(self, bot, ai, memory, personality):
+
+        self.bot = bot
+        self.ai = ai
+        self.memory = memory
+        self.personality = personality
+
+        # Initialize reaction manager
+        self.reactions = ReactionManager()
+
+        self.running = False
+
+        self.last_channel_reply = {}
+        self.last_user_reply = {}
 
         self.running = False
 
