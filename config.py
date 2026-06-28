@@ -13,19 +13,34 @@ class Config:
 
     PREFIX = "!"
 
-    # =========================
-    # AI Providers
-    # =========================
+# ==================================
+# OpenAI Compatible Providers
+# ==================================
 
-    OPENAI_KEY = os.getenv("OPENAI_KEY")
+AI_PROVIDERS = [
 
-    GEMINI_KEY = os.getenv("GEMINI_KEY")
+    {
+        "name": "Groq",
+        "api_key": os.getenv("GROQ_KEY"),
+        "base_url": "https://api.groq.com/openai/v1",
+        "model": "llama-3.3-70b-versatile"
+    },
 
-    GROQ_KEY = os.getenv("GROQ_KEY")
+    {
+        "name": "OpenRouter",
+        "api_key": os.getenv("OPENROUTER_KEY"),
+        "base_url": "https://openrouter.ai/api/v1",
+        "model": "deepseek/deepseek-chat-v3-0324"
+    },
 
-    CLAUDE_KEY = os.getenv("CLAUDE_KEY")
+    {
+        "name": "OpenAI",
+        "api_key": os.getenv("OPENAI_KEY"),
+        "base_url": "https://api.openai.com/v1",
+        "model": "gpt-4.1-mini"
+    }
 
-    OPENROUTER_KEY = os.getenv("OPENROUTER_KEY")
+]
 
     # =========================
     # Models
